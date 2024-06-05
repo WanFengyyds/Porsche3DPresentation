@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <title>Porsche</title>
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="module" src="main.js"></script>
+
+  <div class="page">
+    <div class="external">
+      <!-- Titolo prima pagina -->
+      <div class="boxTitle">
+        <p class="titolo font" id="title">Porsche 911 Carrera 4S</p>
+      </div>
+
+
+      <!-- Prima pagina parte del bottone con animation smooth -->
+      <div class="secondPartFristPage">
+        <div class="data">
+          <img src="img/logoPorsche.png" id="porscheLogo">
+          <div class="leftPage">
+            <p id="ZeroToHundred" class="font">0 to 100 km/h in 3.0s</p>
+          </div>
+          <div class="rightPage">
+            <p id="speed" class="font">Max Speed: 312 KM/h</p>
+          </div>
+        </div>
+
+        <div class="bottomButtonBox">
+          <button class="arrowDown" id="rotateButton">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+              fill="rgba(255,255,255,1)">
+              <path
+                d="M19.1642 12L12.9571 5.79291L11.5429 7.20712L16.3358 12L11.5429 16.7929L12.9571 18.2071L19.1642 12ZM13.5143 12L7.30722 5.79291L5.89301 7.20712L10.6859 12L5.89301 16.7929L7.30722 18.2071L13.5143 12Z">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <canvas id="logo"></canvas>
+  </div>
+
+
+</body>
+
+</html>
