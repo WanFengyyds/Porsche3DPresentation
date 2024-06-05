@@ -1,5 +1,5 @@
 import * as THREE from "./node_modules/three/build/three.module.js"
-import gsap from 'gsap';
+import gsap from './node_modules/gsap/gsap-core.js';
 
 import { GLTFLoader, OrbitControls, TextGeometry } from "./node_modules/three/examples/jsm/Addons.js";
 
