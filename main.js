@@ -1,9 +1,7 @@
-import * as THREE from "three"
+import * as THREE from "./node_modules/three/build/three.module.js"
 import gsap from 'gsap';
 
-import { GLTFLoader, OrbitControls, TextGeometry } from "three/examples/jsm/Addons.js";
-import { FontLoader } from 'three/addons/loaders/FontLoader.js';
-import { color } from "three/examples/jsm/nodes/Nodes.js";
+import { GLTFLoader, OrbitControls, TextGeometry } from "./node_modules/three/examples/jsm/Addons.js";
 
 let click = 0;
 let data;
