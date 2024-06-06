@@ -84,7 +84,7 @@ gltfLoader.load(
       progressBar.value = (xhr.loaded / xhr.total * 100);
     }*/
     let x = xhr.loaded / xhr.total
-    console.log(x);
+    console.log(x + " " + xhr.loaded + " " + xhr.total);
   }
 )
 
