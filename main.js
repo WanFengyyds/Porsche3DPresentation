@@ -1,7 +1,7 @@
-import * as THREE from "./node_modules/three/build/three.module.js"
-import gsap from './node_modules/gsap/gsap-core.js';
+import * as THREE from "three"
+import gsap from 'gsap';
 
-import { GLTFLoader, OrbitControls, TextGeometry } from "./node_modules/three/examples/jsm/Addons.js";
+import { GLTFLoader, OrbitControls, TextGeometry } from "three/examples/jsm/Addons.js";
 
 let click = 0;
 let data;
@@ -53,7 +53,7 @@ scene.add(ambientLight)
 
 
 const gltfLoader = new GLTFLoader();
-gltfLoader.load("porsche/911.glb", (gltf) => {
+gltfLoader.load("911.glb", (gltf) => {
   const car = gltf.scene;
   car.position.y = 0.65
 
