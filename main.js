@@ -5,6 +5,7 @@ import { GLTFLoader, OrbitControls, TextGeometry } from "three/examples/jsm/Addo
 
 let click = 0;
 let data;
+const progressBar = document.getElementById("progress-bar")
 
 const render = new THREE.WebGLRenderer({ canvas: document.querySelector('#logo') })
 render.outputColorSpace = THREE.SRGBColorSpace;
@@ -52,18 +53,36 @@ const ambientLight = new THREE.AmbientLight(0xBEBEBE, 0.3);
 scene.add(ambientLight)
 
 
+// const gltfLoader = new GLTFLoader();
+// gltfLoader.load("911.glb", (gltf) => {
+//   const car = gltf.scene;
+//   car.position.y = 0.65
+
+//   const carModel = gltf.scene.children[0];
+
+//   carModel.getObjectByName('carExternal1').material = bodyMaterial;
+//   carModel.getObjectByName('carExternal2').material = bodyMaterial;
+
+//   scene.add(car);
+// })
 const gltfLoader = new GLTFLoader();
-gltfLoader.load("911.glb", (gltf) => {
-  const car = gltf.scene;
-  car.position.y = 0.65
-
-  const carModel = gltf.scene.children[0];
-
-  carModel.getObjectByName('carExternal1').material = bodyMaterial;
-  carModel.getObjectByName('carExternal2').material = bodyMaterial;
-
-  scene.add(car);
-})
+gltfLoader.load(
+  '911.glb',
+  function (gltf) {
+    const car = gltf.scene;
+    car.position.y = 0.65
+    const carModel = gltf.scene.children[0];
+    carModel.getObjectByName('carExternal1').material = bodyMaterial;
+    carModel.getObjectByName('carExternal2').material = bodyMaterial;
+    const progressBarContainer = document.querySelector(".progress-bar-conrtainer")
+    progressBarContainer.style.display = 'none';
+    scene.add(car);
+  },
+  function (xhr) {
+    progressBar.value = (xhr.loaded / xhr.total * 100);
+    console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+  }
+)
 
 function animate() {
   requestAnimationFrame(animate);
