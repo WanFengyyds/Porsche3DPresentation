@@ -79,12 +79,7 @@ gltfLoader.load(
     scene.add(car);
   },
   function (xhr) {
-    /*let progress = (xhr.loaded / xhr.total * 100);
-    if (progress > 1) {
-      progressBar.value = (xhr.loaded / xhr.total * 100);
-    }*/
-    let x = xhr.loaded / xhr.total
-    console.log(x + " " + xhr.loaded + " " + xhr.total);
+    progressBar = (xhr.loaded / 16503491 * 100);
   }
 )
 
