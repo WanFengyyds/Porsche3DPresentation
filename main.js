@@ -5,6 +5,7 @@ import { GLTFLoader, OrbitControls, TextGeometry } from "three/examples/jsm/Addo
 
 let click = 0;
 let data;
+const lenghtFile = 20000000;
 const progressBar = document.getElementById("progress-bar");
 progressBar.value = 0;
 const render = new THREE.WebGLRenderer({ canvas: document.querySelector('#logo') })
@@ -79,7 +80,12 @@ gltfLoader.load(
     scene.add(car);
   },
   function (xhr) {
-    progressBar.value = (xhr.loaded / 16503491 * 100);
+    if (xhr.total == 0) {
+      progressBar.value = (xhr.loaded / lenghtFile * 100);
+    } else {
+      progressBar.value = (xhr.loaded / xhr.total * 100);
+    }
+
   }
 )
 
