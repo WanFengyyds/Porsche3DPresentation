@@ -5,8 +5,8 @@ import { GLTFLoader, OrbitControls, TextGeometry } from "three/examples/jsm/Addo
 
 let click = 0;
 let data;
-const progressBar = document.getElementById("progress-bar")
-
+const progressBar = document.getElementById("progress-bar");
+progressBar.value = 0;
 const render = new THREE.WebGLRenderer({ canvas: document.querySelector('#logo') })
 render.outputColorSpace = THREE.SRGBColorSpace;
 render.setPixelRatio(window.devicePixelRatio);
