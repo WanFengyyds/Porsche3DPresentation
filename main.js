@@ -6,6 +6,7 @@ import { GLTFLoader, OrbitControls, TextGeometry } from "three/examples/jsm/Addo
 let click = 0;
 let data;
 const lenghtFile = 20000000;
+let responsive = false;
 const progressBar = document.getElementById("progress-bar");
 progressBar.value = 0;
 const render = new THREE.WebGLRenderer({ canvas: document.querySelector('#logo') })
@@ -16,7 +17,13 @@ render.setSize(window.innerWidth, window.innerHeight);
 render.clearColor(0x000000);
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 1000);
-camera.position.set(-7, 1, 0);
+if (window.innerWidth < 900) {
+  camera.position.set(-5, 1, 15);
+  responsive = true;
+} else {
+  camera.position.set(-7, 1, 0);
+}
+
 camera.lookAt(6, 0, 0);
 
 
@@ -34,7 +41,7 @@ controls.target = new THREE.Vector3(0, 1, 0);
 
 
 const groundTexture = new THREE.TextureLoader().load('ground.jpg')
-const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
+const groundGeometry = new THREE.PlaneGeometry(40, 40, 32, 32);
 groundGeometry.rotateX(-Math.PI / 2);
 
 const groundMaterial = new THREE.MeshStandardMaterial({
@@ -106,11 +113,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function carRotation() {
   click++;
+  let distance = 0;
+  if (responsive) {
+    distance = 7;
+  }
+
   switch (click) {
     case 1:
       await gsap.to(camera.position, {
         x: 5,
-        z: 8.5,
+        z: 8.5 + distance,
         duration: 2,
       });
 
@@ -125,7 +137,7 @@ async function carRotation() {
 
       await gsap.to(camera.position, {
         x: 0,
-        z: -8,
+        z: -8 - distance,
         y: 1,
         duration: 2,
       });
@@ -144,7 +156,7 @@ async function carRotation() {
 
       await gsap.to(camera.position, {
         x: -3.5,
-        z: -6,
+        z: -6 - distance,
         y: 1,
         duration: 2,
       });

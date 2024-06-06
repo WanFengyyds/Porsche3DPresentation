@@ -29,7 +29,6 @@ canvas {
 
 .titolo {
   color: white;
-
   font-size: 120px;
   height: fit-content;
 }
@@ -107,7 +106,6 @@ button {
   opacity: 0;
   padding: 5%;
   margin-bottom: 5%;
-  /*animation: fadeIn 5s*/
 }
 
 .bottomButtonBox {
@@ -199,4 +197,81 @@ button {
 label {
   color: white;
   font-size: 32px;
+}
+
+@media (max-width: 900px) {
+
+  .external {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .boxTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .titolo {
+    color: white;
+    font-size: 35px;
+    height: fit-content;
+  }
+
+  .holePage {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    overflow: scroll;
+  }
+
+  #ZeroToHundred {
+    font-size: 20px;
+  }
+
+  #speed {
+    font-size: 20px;
+  }
+
+  .leftPage {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 20%;
+    height: 100%;
+  }
+
+  .rightPage {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 20%;
+    height: 100%;
+  }
+
+  #porscheLogo {
+    display: none;
+    position: ;
+    width: 100%;
+    height: fit-content;
+    opacity: 0;
+    left: 0%;
+    right: 0%;
+    bottom: 30%;
+  }
 }
