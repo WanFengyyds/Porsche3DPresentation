@@ -31,7 +31,7 @@ controls.target = new THREE.Vector3(0, 1, 0);
 
 
 
-const groundTexture = new THREE.TextureLoader().load('img/ground.jpg')
+const groundTexture = new THREE.TextureLoader().load('ground.jpg')
 const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
 groundGeometry.rotateX(-Math.PI / 2);
 
